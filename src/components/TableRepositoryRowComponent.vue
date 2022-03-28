@@ -1,7 +1,7 @@
 <template>
   <tr>
     <td>{{repository.name}}</td>
-    <td>{{repository.url}}</td>
+    <td><a :href="repository.url" target="_blank">{{repository.url}}</a></td>
   </tr>
 </template>
 
