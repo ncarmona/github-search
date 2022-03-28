@@ -1,12 +1,18 @@
 import { createStore } from 'vuex'
 
 export default createStore({
-  state: {
+  state: { repositories: {} },
+  getters: {
+    repositories: (state: any) => state.repositories
   },
   mutations: {
+    setRepositories (state:any, repositories:any) {
+      state.repositories = repositories
+    }
   },
   actions: {
-  },
-  modules: {
+    setRepositories ({ commit }:any, repositories:string) {
+      commit('setRepositories', repositories)
+    }
   }
 })
