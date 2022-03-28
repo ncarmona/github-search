@@ -16,10 +16,13 @@ export default defineComponent({
   setup () {
     const searchString:Ref<string> = ref('')
     const store = useStore()
-    watch(searchString, async (val: any) => {
+    const fillRepositories = async (val:string) => {
       store.dispatch('setRepositories', {
         repositories: await getRepositoriesController(val)
       })
+    }
+    watch(searchString, async (val: string) => {
+      await fillRepositories(val)
     })
     return { searchString }
   }
