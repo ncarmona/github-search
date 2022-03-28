@@ -1,6 +1,7 @@
 <template>
-  <InputSearchRepositoryComponent />
-  <Suspense>
+  <div class="container pt-4">
+  <InputSearchRepositoryComponent class="row mb-4" />
+  <Suspense class="row">
     <template #default>
       <RepositoryResultsComponent />
     </template>
@@ -8,6 +9,7 @@
       <span>Loading</span>
     </template>
   </Suspense>
+  </div>
 </template>
 
 <script lang="ts">

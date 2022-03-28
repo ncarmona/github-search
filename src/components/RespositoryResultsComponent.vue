@@ -1,5 +1,5 @@
 <template>
-  <table>
+  <table class="table table-striped table-bordered">
     <InputSearchRepositoryHeaderComponent />
     <tbody>
       <InputSearchRepositoryRowComponent v-for="repository in repositories" :repository="repository" :key="repository.url" />

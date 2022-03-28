@@ -1,5 +1,10 @@
 <template>
-  <input type="text" placeholder="framework" v-model="searchString">
+  <div class="search p-2 col-md-6">
+    <div class="d-flex p-0">
+      <img src="./../assets/search.png" class="search-icon flex-shrink-1" alt="search">
+      <input type="text" class="w-100" placeholder="framework" v-model="searchString">
+    </div>
+  </div>
 </template>
 
 <script lang="ts">
@@ -16,8 +21,21 @@ export default defineComponent({
         repositories: await getRepositoriesController(val)
       })
     })
-
     return { searchString }
   }
 })
 </script>
+
+<style lang="scss" scoped>
+  .search {
+    border: 1px solid black;
+    border-radius: 15px;
+    .search-icon {
+      width: 25px;
+    }
+    input {
+      border: 0;
+      outline: none;
+    }
+  }
+</style>
