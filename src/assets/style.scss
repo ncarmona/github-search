@@ -2,3 +2,12 @@
   text-transform: uppercase;
   color: gray;
 }
+
+@mixin degradade($start, $end) {
+  background: linear-gradient($start, $end);
+}
+
+html, body, #app {
+  height: 100%;
+  @include degradade(white, whitesmoke)
+}
